@@ -1,0 +1,21 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Executar arquivo C no Linux (sem depuração)",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/index",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "preLaunchTask": "Compilar C",
+            "linux": {
+                "program": "${workspaceFolder}/index.sh"
+            }
+        }
+    ]
+}
