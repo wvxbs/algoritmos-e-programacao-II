@@ -19,7 +19,9 @@ int main(int argc, char *argv[]) {
         int image[MAX_HEIGHT][MAX_WIDTH];
         printf("Modo manual:\n");
         readManualInput(&width, &height, image);
-        encodeImage(width, height, image);
+        char* encodedImage = binaryImageEncoder(0, 0, width, height, image);
+        printf("Codificação: %s\n", encodedImage);
+        free(encodedImage);
     } else if (strcmp(argv[1], "-f") == 0) {
         if (argc < 3) {
             printf("Erro: Especifique o nome do arquivo após a flag -f.\n");
@@ -28,7 +30,9 @@ int main(int argc, char *argv[]) {
         int width, height;
         int image[MAX_HEIGHT][MAX_WIDTH];
         if (readPBMFile(argv[2], &width, &height, image)) {
-            encodeImage(width, height, image);
+            char* encodedImage = binaryImageEncoder(0, 0, width, height, image);
+            printf("Codificação: %s\n", encodedImage);
+            free(encodedImage);
         } else {
             printf("Erro ao ler o arquivo %s. Verifique se o arquivo está no formato PBM.\n", argv[2]);
             return 1;

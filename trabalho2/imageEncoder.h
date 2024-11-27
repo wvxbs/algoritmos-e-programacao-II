@@ -6,4 +6,6 @@
 
 void encodeImage(int width, int height, int image[MAX_HEIGHT][MAX_WIDTH]);
 
+char* binaryImageEncoder(int startX, int startY, int width, int height, int image[MAX_HEIGHT][MAX_WIDTH]);
+
 #endif
